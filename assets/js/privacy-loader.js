@@ -8,8 +8,8 @@ window.addEventListener('load', () => {
     // --- 設定區 ---
     
     // ★ [FIX] 設定您的網站 Base URL (GitHub 儲存庫名稱)
-    // 如果您的網址是 keicha2025.github.io/keicha，這裡就是 "/keicha"
-    const BASE_URL = "/keicha";
+    // 如果您的網址是 keicha2025.github.io/keicha，這裡就是 ""
+    const BASE_URL = "";
 
     // ★ [FIX] 指向您儲存庫中的 TSV 檔案
     // 瀏覽器會去抓取: /assets/data/privacy.tsv

@@ -6,104 +6,127 @@
     <!-- 設定 2.5 秒後自動跳轉 -->
     <meta http-equiv="refresh" content="2.5; url=https://keicha2025.github.io/keicha/">
     <title>KEICHA | 讓日本的事，變得簡單。</title>
-    <!-- 引入 Zen Maru Gothic -->
+    
+    <!-- 網站小圖示 (Favicon) -->
+    <link rel="icon" type="image/svg+xml" href="https://keicha2025.github.io/keicha/images/KEICHA_LOGO.svg">
+    
+    <!-- 引入品牌字體 Zen Maru Gothic -->
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --brand-color: #6ea44c;
             --text-color: #333333;
             --bg-color: #ffffff;
+            /* 定義品牌字體變數 */
+            --brand-font: 'Zen Maru Gothic', sans-serif;
         }
 
         * {
             box-sizing: border-box;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        body {
-            font-family: 'Zen Maru Gothic', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+        body, html {
             margin: 0;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            /* 全域套用品牌字體 */
+            font-family: var(--brand-font);
         }
 
-        /* 全區域點擊跳轉容器 */
+        /* 滿版點擊跳轉區域 */
         .main-link {
             text-decoration: none;
             color: inherit;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
             width: 100%;
             height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
         }
 
-        .content-wrapper {
-            text-align: center;
-            opacity: 0;
+        /* 核心內容容器：垂直置中並向上微調重心 */
+        .content-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            /* 動畫 1.2 秒淡入 */
+            text-align: center;
+            opacity: 0;
+            /* 初始視覺位移：向上提 5vh 確保視覺平衡 */
+            transform: translateY(-5vh);
             animation: fadeIn 1.2s ease-out forwards;
         }
 
-        /* Logo 容器：確保物理置中 */
-        .logo-container {
+        /* Logo 圓形裁切與樣式 */
+        .brand-logo {
             width: 120px;
             height: 120px;
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .brand-logo {
-            width: 100%;
-            height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            border: 1px solid #f5f5f5;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            border: 1px solid #f0f0f0;
             background-color: #fff;
         }
 
+        /* 品牌名稱 KEICHA */
         h1 {
+            font-family: var(--brand-font);
             font-size: 2.2rem;
             font-weight: 700;
-            margin: 0 0 12px 0;
-            /* 修正視覺偏差：利用 text-indent 抵消 letter-spacing 產生的右方空白 */
-            letter-spacing: 0.15em;
-            text-indent: 0.15em; 
+            margin: 0 0 10px 0;
             color: var(--brand-color);
+            letter-spacing: 0.15em;
+            /* 利用 text-indent 抵消右側字距，達到完美水平置中 */
+            text-indent: 0.15em;
         }
 
+        /* 品牌標語 */
         .slogan {
+            font-family: var(--brand-font);
             font-size: 1.1rem;
             font-weight: 400;
             margin: 0;
-            /* 修正視覺偏差：利用 text-indent 抵消 letter-spacing 產生的右方空白 */
-            letter-spacing: 0.25em;
-            text-indent: 0.25em;
             color: var(--brand-color);
+            letter-spacing: 0.25em;
+            /* 利用 text-indent 抵消右側字距，達到完美水平置中 */
+            text-indent: 0.25em;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { 
+                opacity: 0; 
+                transform: translateY(calc(-5vh + 15px)); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(-5vh); 
+            }
         }
 
-        /* 響應式：手機版調整 */
+        /* 針對行動裝置的響應式優化 */
         @media (max-width: 768px) {
-            .logo-container { width: 100px; height: 100px; }
+            .content-container {
+                /* 手機版重心再往上提，避免被工具列壓迫 */
+                transform: translateY(-8vh);
+            }
+            @keyframes fadeIn {
+                from { 
+                    opacity: 0; 
+                    transform: translateY(calc(-8vh + 15px)); 
+                }
+                to { 
+                    opacity: 1; 
+                    transform: translateY(-8vh); 
+                }
+            }
+            .brand-logo { width: 105px; height: 105px; }
             h1 { font-size: 1.8rem; }
             .slogan { font-size: 0.95rem; }
         }
@@ -112,22 +135,20 @@
 <body>
 
     <a href="https://keicha2025.github.io/keicha/" class="main-link">
-        <main class="content-wrapper">
-            <div class="logo-container">
-                <!-- 已修正圖片路徑 -->
-                <img src="https://keicha2025.github.io/keicha/images/KEICHA_LOGO.svg" 
-                     alt="KEICHA Logo" 
-                     class="brand-logo"
-                     onerror="this.style.opacity='0';">
-            </div>
+        <div class="content-container">
+            <!-- 品牌圖誌 -->
+            <img src="https://keicha2025.github.io/keicha/images/KEICHA_LOGO.svg" alt="KEICHA" class="brand-logo">
             
+            <!-- 品牌名稱 -->
             <h1>KEICHA</h1>
-            <div class="slogan">讓日本的事，變得簡單。</div>
-        </main>
+            
+            <!-- 品牌標語 -->
+            <p class="slogan">讓日本的事，變得簡單。</p>
+        </div>
     </a>
 
     <script>
-        // 2.5 秒後執行跳轉
+        // 設定 2500 毫秒後跳轉
         setTimeout(function() {
             window.location.href = "https://keicha2025.github.io/keicha/";
         }, 2500);

@@ -1,26 +1,17 @@
-/**
- * KEICHA 全站統一配置
- */
+// assets/js/config.js
 const SITE_CONFIG = {
-    BRAND_NAME: "KEICHA",
-    BASE_URL: "", // 搬家到根目錄後設為空
-
-    API: {
-        PRODUCT_DISPLAY: "https://script.google.com/macros/s/AKfycbxnxbcdCdxH2Qmuek5Up8BqTWeOLUcLR30jfUi0lMbMn5ocn9tY1f_c7yEyd9KSZ4Um/exec",
-        ORDER_SYSTEM: "https://script.google.com/macros/s/AKfycbyUq36i64Z-JGcERE_rZOdphVtVDX8L-lguc7eiUIdoAERqI1ZK8GWAL-HgbC75cuMHFg/exec",
-        // ★ 第三組：電話代播系統 API
-        DENWA_BOOKING: "https://script.google.com/macros/s/AKfycbyaiaR2hPXA8RN2E1_5GUYFNtzGnkUZC5Kq2xXt6Mw80QVRw0Wi7fBrM2k3MxyZhon4/exec"
-    },
-
-    LINE: {
-        ID: "@366qwylw",
-        LINK: "https://lin.ee/F3JngaC"
-    }
+    brandName: "KEICHA",
+    lineId: "@366qwylw",
+    lineLink: "https://lin.ee/QJU5mUO",
+    email: "keicha.nihoncha@gmail.com",
+    pcPayLink: "https://pcpay.tw/NF4vv", // 補款連結
+    footerCopyright: `© ${new Date().getFullYear()} KEICHA. All Rights Reserved.`,
+    
+    // 導覽選單配置
+    navMenu: [
+        { name: "抹茶代購狀況", url: "./maccha.html" },
+        { name: "電話代播服務", url: "./denwa.html" },
+        { name: "訂單追蹤", url: "./jyoukyou.html" },
+        { name: "貨到付款下單", url: "./diy.html" }
+    ]
 };
-
-// 輔助函式：修正搬家後的路徑
-function fixUrl(path) {
-    if (path.startsWith('http') || path.startsWith('//')) return path;
-    const cleanPath = path.startsWith('/') ? path : '/' + path;
-    return SITE_CONFIG.BASE_URL + cleanPath;
-}

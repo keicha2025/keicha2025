@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 確保動畫跑完後自動跳轉 (3.5秒) -->
-    <meta http-equiv="refresh" content="3.5; url=https://keicha2025.github.io/keicha/">
+    <!-- 設定 2.5 秒後自動跳轉 -->
+    <meta http-equiv="refresh" content="2.5; url=https://keicha2025.github.io/keicha/">
     <title>KEICHA | 讓日本的事，變得簡單。</title>
     <!-- 引入 Zen Maru Gothic -->
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
@@ -27,13 +27,12 @@
             margin: 0;
             height: 100vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             overflow: hidden;
         }
 
-        /* 全區域點擊跳轉 */
+        /* 全區域點擊跳轉容器 */
         .main-link {
             text-decoration: none;
             color: inherit;
@@ -49,34 +48,52 @@
         .content-wrapper {
             text-align: center;
             opacity: 0;
-            /* 動畫時間：1.5秒淡入 */
-            animation: fadeIn 1.5s ease-out forwards;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* 動畫 1.2 秒淡入 */
+            animation: fadeIn 1.2s ease-out forwards;
         }
 
-        /* Logo 樣式：將方形切成圓形 */
-        .brand-logo {
+        /* Logo 容器：確保物理置中 */
+        .logo-container {
             width: 120px;
             height: 120px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .brand-logo {
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 30px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             border: 1px solid #f5f5f5;
+            background-color: #fff;
         }
 
         h1 {
             font-size: 2.2rem;
             font-weight: 700;
             margin: 0 0 12px 0;
+            /* 修正視覺偏差：利用 text-indent 抵消 letter-spacing 產生的右方空白 */
             letter-spacing: 0.15em;
+            text-indent: 0.15em; 
             color: var(--brand-color);
         }
 
         .slogan {
             font-size: 1.1rem;
-            letter-spacing: 0.25em;
-            color: var(--brand-color);
             font-weight: 400;
+            margin: 0;
+            /* 修正視覺偏差：利用 text-indent 抵消 letter-spacing 產生的右方空白 */
+            letter-spacing: 0.25em;
+            text-indent: 0.25em;
+            color: var(--brand-color);
         }
 
         @keyframes fadeIn {
@@ -84,8 +101,9 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* 響應式：手機版調整 */
         @media (max-width: 768px) {
-            .brand-logo { width: 100px; height: 100px; }
+            .logo-container { width: 100px; height: 100px; }
             h1 { font-size: 1.8rem; }
             .slogan { font-size: 0.95rem; }
         }
@@ -95,22 +113,24 @@
 
     <a href="https://keicha2025.github.io/keicha/" class="main-link">
         <main class="content-wrapper">
-            <!-- 品牌 Logo -->
-            <img src="https://keicha2025.github.io/images/KEICHA_LOGO.svg" alt="KEICHA Logo" class="brand-logo">
+            <div class="logo-container">
+                <!-- 已修正圖片路徑 -->
+                <img src="https://keicha2025.github.io/keicha/images/KEICHA_LOGO.svg" 
+                     alt="KEICHA Logo" 
+                     class="brand-logo"
+                     onerror="this.style.opacity='0';">
+            </div>
             
-            <!-- 品牌名稱 -->
             <h1>KEICHA</h1>
-            
-            <!-- 品牌標語 -->
             <div class="slogan">讓日本的事，變得簡單。</div>
         </main>
     </a>
 
     <script>
-        // JavaScript 跳轉作為備援，確保在動畫播放感官結束後執行
+        // 2.5 秒後執行跳轉
         setTimeout(function() {
             window.location.href = "https://keicha2025.github.io/keicha/";
-        }, 3500);
+        }, 2500);
     </script>
 </body>
 </html>

@@ -12,7 +12,7 @@ window.addEventListener('load', () => {
     const BASE_URL = "/keicha";
 
     // ★ [FIX] 指向您儲存庫中的 TSV 檔案
-    // 瀏覽器會去抓取: https://keicha2025.github.io/keicha/assets/data/privacy.tsv
+    // 瀏覽器會去抓取: /assets/data/privacy.tsv
     const privacy_tsv_url = BASE_URL + "/assets/data/privacy.tsv";
     
     // --- 設定結束 ---

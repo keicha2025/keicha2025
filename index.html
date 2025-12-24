@@ -1,165 +1,130 @@
----
-layout: default
-title: 抹茶代購・日本電話代打服務｜KEICHA
-description: KEICHA 提供日本抹茶代購與日本電話代打服務，協助餐廳預約、聯絡日本店家，讓日本的事變得簡單。
-keywords: KEICHA, 日本茶, 日本代購, 抹茶, 抹茶代購, 上林春松, 日本電話代播, 日本電話代打, 日文電話, 餐廳預約, 山政小山園, 代購
----
+<!DOCTYPE html>
+<html lang="zh-Hant" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<main>
-<section class="relative h-auto py-14 md:py-24 flex items-center justify-center text-center text-white px-4 bg-brandGreen">
-    <div class="relative z-10">
-        
-        <h1 class="text-4xl md:text-6xl brand-title-font font-semibold">
-            KEICHA
-        </h1>
+    <!-- SEO 完整保留：路徑已修正為相對路徑 -->
+    <title>抹茶代購・日本電話代打服務｜KEICHA</title>
+    <meta name="description" content="KEICHA 提供日本抹茶代購與日本電話代打服務，協助餐廳預約、聯絡日本店家，讓日本的事變得簡單。">
+    <meta name="keywords" content="KEICHA, 日本茶, 日本代購, 抹茶, 抹茶代購, 上林春松, 日本電話代播, 日本電話代打, 日文電話, 餐廳預約, 山政小山園, 代購">
+    <meta name="google-site-verification" content="RSCsK8X-OoCTr2uKZ2oKz-QbY1SjZWYLZRIfQz9NKWY">
+    
+    <!-- Open Graph：修正為新網域根目錄 -->
+    <meta property="og:title" content="抹茶代購・日本電話代打服務｜KEICHA">
+    <meta property="og:description" content="KEICHA 提供日本抹茶代購與日本電話代打服務，協助餐廳預約、聯絡日本店家，讓日本的事變得簡單。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./assets/images/KEICHA_LOGO_chuuouzoroe.jpg">
+    <meta property="og:url" content="https://keicha2025.github.io/">
+    <meta property="og:site_name" content="KEICHA">
 
-        <p class="text-xl md:text-2xl brand-title-font font-medium tracking-wide mt-6 md:mt-8">
-            讓日本的事，變得簡單。
-        </p>
+    <link rel="icon" href="./assets/images/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./assets/images/favicon.png">
 
-        <div class="flex flex-wrap justify-center items-center gap-x-4 gap-y-3 md:gap-x-6 mt-6 md:mt-8">
-            <a href="{{ site.baseurl }}/maccha.html" class="text-white font-medium hover:underline">
-                抹茶代購
-            </a>
-            <span class="text-white opacity-50 hidden md:inline">|</span>
-            <a href="{{ site.baseurl }}/denwa.html" class="text-white font-medium hover:underline">
-                電話代播
-            </a>
-            <span class="text-white opacity-50 hidden md:inline">|</span>
-            <a href="#payment" class="text-white font-medium hover:underline">
-                付款下單
-            </a>
-            <span class="text-white opacity-50 hidden md:inline">|</span>
-            <a href="#notice" class="text-white font-medium hover:underline">
-                購買須知
-            </a>
-        </div>
+    <!-- 外部核心資源 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
 
-        <a href="#contact"
-           class="mt-8 md:mt-10 inline-block bg-white text-brandGreen px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-lg">
-            <span class="material-symbols-rounded align-middle mr-1">chat</span>
-            LINE 官方客服
-        </a>
+    <!-- 載入我們重構的樣式與配置 -->
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <script src="./assets/js/config.js"></script>
+    <script src="./assets/js/components.js" defer></script>
+</head>
 
-    </div>
-</section>
+<body class="bg-gray-50 text-gray-800">
 
-<section id="payment" class="py-16 md:py-24 bg-gray-50 scroll-mt-20">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12">付款與下單專區</h2>
-            <p class="text-center text-gray-500 mb-8">
-                所有訂單皆先透過 LINE 確認內容與金額後再進行付款
-            </p>
+    <!-- 這裡將由 JS 自動載入 Header -->
+    <div id="header-placeholder"></div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-                
-                <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col h-full">
-                    <h3 class="text-xl md:text-2xl font-semibold text-center mb-8">線上刷卡支付</h3>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative h-auto py-14 md:py-24 flex items-center justify-center text-center text-white px-4 bg-[#6ea44c]">
+            <div class="relative z-10">
+                <h1 class="text-4xl md:text-6xl brand-title-font font-semibold">KEICHA</h1>
+                <p class="text-xl md:text-2xl brand-title-font font-medium tracking-wide mt-6 md:mt-8">讓日本的事，變得簡單。</p>
+
+                <div class="flex flex-wrap justify-center items-center gap-x-4 gap-y-3 md:gap-x-6 mt-6 md:mt-8">
+                    <a href="./maccha.html" class="text-white font-medium hover:underline">抹茶代購</a>
+                    <span class="text-white opacity-50 hidden md:inline">|</span>
+                    <a href="./denwa.html" class="text-white font-medium hover:underline">電話代播</a>
+                    <span class="text-white opacity-50 hidden md:inline">|</span>
+                    <a href="#payment" class="text-white font-medium hover:underline">付款下單</a>
+                    <span class="text-white opacity-50 hidden md:inline">|</span>
+                    <a href="#notice" class="text-white font-medium hover:underline">購買須知</a>
+                </div>
+
+                <a href="#contact" class="mt-8 md:mt-10 inline-block bg-white text-[#6ea44c] px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-lg">
+                    <span class="material-symbols-rounded align-middle mr-1">chat</span> LINE 官方客服
+                </a>
+            </div>
+        </section>
+
+        <!-- Payment Section -->
+        <section id="payment" class="py-16 md:py-24 bg-gray-50 scroll-mt-20">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-12">付款與下單專區</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
                     
-                    <div class="flex flex-col items-center justify-center text-center flex-grow pb-6">
-                        <div>
-                            <a href="https://pcpay.tw/NF4vv" target="_blank" rel="noopener noreferrer" class="inline-block hover:opacity-90 transition-opacity">
-                                <img src="https://www.pchomepay.com.tw/share/static/dist/images/receiptBtn-180x40.png" border="0" alt="支付補款及尾款"/>
+                    <!-- 線上刷卡 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col h-full">
+                        <h3 class="text-xl md:text-2xl font-semibold text-center mb-8">線上刷卡支付</h3>
+                        <div class="flex flex-col items-center justify-center text-center flex-grow pb-6">
+                            <a href="https://pcpay.tw/NF4vv" target="_blank" class="hover:opacity-90 transition-opacity">
+                                <img src="https://www.pchomepay.com.tw/share/static/dist/images/receiptBtn-180x40.png" border="0" alt="支付補款">
                             </a>
-                            <p class="text-sm text-gray-500 mt-4">請進入後填寫付款金額</p>
+                        </div>
+                        <div class="pt-6 border-t border-gray-200 text-center mt-auto">
+                            <input type="text" value="https://pcpay.tw/NF4vv" readonly onclick="this.select()" class="w-full max-w-sm p-3 text-center bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6ea44c] text-gray-700">
                         </div>
                     </div>
 
-                    <div class="pt-6 border-t border-gray-200 text-center mt-auto">
-                        <p class="text-sm text-gray-500 mb-3 font-medium">如無法正常開啟，請複製以下連結：</p>
-                        <input type="text" value="https://pcpay.tw/NF4vv" readonly onclick="this.select()" 
-                               class="w-full max-w-sm p-3 text-center bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brandGreen text-gray-700" 
-                               onfocus="this.select()">
+                    <!-- 貨到付款 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col h-full">
+                        <h3 class="text-xl md:text-2xl font-semibold text-center mb-8">店到店貨到付款下單</h3>
+                        <div class="flex flex-col items-center justify-center text-center flex-grow pb-6">
+                            <a href="https://myship.7-11.com.tw/cart/easy/GM2510186847800" target="_blank" class="inline-block bg-[#6ea44c] text-white px-10 py-3 rounded-full text-lg font-bold hover:bg-opacity-90 transition duration-300 shadow-lg transform hover:scale-105">前往 7-11 賣貨便</a>
+                        </div>
+                        <div class="pt-6 border-t border-gray-200 text-center mt-auto">
+                            <input type="text" value="https://myship.7-11.com.tw/cart/easy/GM2510186847800" readonly onclick="this.select()" class="w-full max-w-sm p-3 text-center bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6ea44c] text-gray-700">
+                        </div>
                     </div>
                 </div>
-
-                <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col h-full">
-                    <h3 class="text-xl md:text-2xl font-semibold text-center mb-8">店到店貨到付款下單</h3>
-                    
-                    <div class="flex flex-col items-center justify-center text-center flex-grow pb-6">
-                        <a href="https://myship.7-11.com.tw/cart/easy/GM2510186847800" target="_blank" rel="noopener noreferrer" 
-                           class="inline-block bg-brandGreen text-white px-10 py-3 rounded-full text-lg font-bold hover:bg-opacity-90 transition duration-300 shadow-lg transform hover:scale-105">
-                            前往 7-11 賣貨便
-                        </a>
-                        <p class="text-sm text-gray-500 mt-4">進入後請填寫商品名稱及價格</p>
-                    </div>
-                    
-                    <div class="pt-6 border-t border-gray-200 text-center mt-auto">
-                        <p class="text-sm text-gray-500 mb-3 font-medium">如無法正常開啟，請複製以下連結：</p>
-                        <input type="text" value="https://myship.7-11.com.tw/cart/easy/GM2510186847800" readonly onclick="this.select()" 
-                               class="w-full max-w-sm p-3 text-center bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brandGreen text-gray-700" 
-                               onfocus="this.select()">
-                    </div>
-                </div>
-
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="services" class="py-16 md:py-24 bg-white scroll-mt-20">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12">服務項目</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-                
-                <div class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300 flex flex-col h-full border border-gray-100">
-                    <img src="{{ site.baseurl }}/images/KEICHA_icon_maccha.png" alt="抹茶代購" class="h-16 w-16 mx-auto mb-4">
-                    <h3 class="text-xl font-semibold mb-3">抹茶代購</h3>
-                    
-                    <ul class="text-gray-600 mb-6 text-left text-sm space-y-1 pl-4 flex-grow">
-                        <li>・日本抹茶品牌代購（山政小山園、上林春松等）</li>
-                        <li>・部分 brand 因供貨不穩，需先詢問</li>
-                        <li>・歡迎透過 LINE 私訊詢問</li>
-                    </ul>
-
-                    <div class="mt-auto flex flex-col gap-3">
-                        <a href="https://lin.ee/QJU5mUO" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-200 text-gray-700 px-6 py-2 rounded-full font-medium hover:bg-opacity-90 transition duration-300">
-                            私訊詢問抹茶
-                        </a>
-                        <a href="{{ site.baseurl }}/maccha.html" class="inline-block bg-brandGreen text-white px-6 py-2 rounded-full font-medium hover:bg-gray-300 transition duration-300">
-                            查看抹茶代購狀況
-                        </a>
+        <!-- Services Section -->
+        <section id="services" class="py-16 md:py-24 bg-white scroll-mt-20">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-12">服務項目</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300 flex flex-col h-full border border-gray-100">
+                        <img src="./assets/images/KEICHA_icon_maccha.png" alt="抹茶代購" class="h-16 w-16 mx-auto mb-4">
+                        <h3 class="text-xl font-semibold mb-3">抹茶代購</h3>
+                        <div class="mt-auto flex flex-col gap-3">
+                            <a href="./maccha.html" class="inline-block bg-[#6ea44c] text-white px-6 py-2 rounded-full font-medium hover:bg-opacity-90 transition">查看代購狀況</a>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300 flex flex-col h-full border border-gray-100">
+                        <img src="./assets/images/KEICHA_icon_denwa.png" alt="電話代播" class="h-16 w-16 mx-auto mb-4">
+                        <h3 class="text-xl font-semibold mb-3">日本電話代播</h3>
+                        <div class="mt-auto">
+                            <a href="./denwa.html" class="inline-block bg-gray-700 text-white px-6 py-2 rounded-full font-medium hover:bg-gray-600 transition w-full">查看詳情</a>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300 flex flex-col h-full border border-gray-100">
-                    <img src="{{ site.baseurl }}/images/KEICHA_icon_denwa.png" alt="電話代播" class="h-16 w-16 mx-auto mb-4">
-                    <h3 class="text-xl font-semibold mb-3">日本電話代播</h3>
-                    <p class="text-gray-600 mb-6 flex-grow text-left">
-                        跨越語言障礙，為您代訂日本餐廳、預約活動、或聯繫處理日本事務，讓您的日本之行游刃有餘。
-                    </p>
-                    <div class="mt-auto">
-                        <a href="{{ site.baseurl }}/denwa.html" class="inline-block bg-gray-700 text-white px-6 py-2 rounded-full font-medium hover:bg-gray-600 transition duration-300 w-full">
-                            查看服務詳情
-                        </a>
-                    </div>
-                </div>
-                
             </div>
-        </div>
-    </section>
+        </section>
 
-<section id="contact" class="py-16 md:py-24 bg-brandGreen bg-opacity-10 scroll-mt-20">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-2xl md:text-3xl font-bold mb-4">需要我們為您服務嗎？</h2>
-            
-            <p class="text-center text-gray-700 mb-8">請透過 LINE 官方帳號聯絡我們。</p>
-            
-            <a href="https://lin.ee/F3JngaC" target="_blank" rel="noopener noreferrer" 
-               class="inline-block bg-brandGreen text-white px-8 py-3 rounded-lg text-lg font-bold hover:bg-opacity-90 transition duration-300 shadow-md transform hover:scale-105">
-                LINE 官方客服
-            </a>
-            
-            <p class="text-gray-600 mt-8 mb-3 font-medium">或手動輸入 ID:</p>
+        <!-- 這裡將由 JS 自動載入 Contact Section -->
+        <div id="contact-placeholder"></div>
+    </main>
 
-            <input type="text" value="@366qwylw" readonly
-               onclick="this.select()"
-               class="font-mono bg-white p-2 rounded border border-slate-300 text-center w-48 
-                     focus:outline-none focus:ring-2 focus:ring-brandGreen text-gray-700"
-               onfocus="this.select()">
-        </div>
-    </section>
+    <!-- 這裡將由 JS 自動載入 Footer -->
+    <div id="footer-placeholder"></div>
 
-</main>
-
-
+</body>
+</html>

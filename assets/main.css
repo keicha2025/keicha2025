@@ -1,0 +1,37 @@
+/* assets/css/main.css */
+:root {
+    --brand-green: #6ea44c;
+    --brand-green-dark: #5d8c40;
+    --brand-green-light: rgba(110, 164, 76, 0.1);
+    --text-main: #1f2937;
+    --text-muted: #64748b;
+    --bg-light: #f8fafc;
+    --font-body: 'Noto Sans TC', sans-serif;
+    --font-brand: 'Zen Maru Gothic', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-light);
+    color: var(--text-main);
+}
+
+.brand-title-font {
+    font-family: var(--font-brand) !important;
+    font-weight: 500 !important;
+}
+
+.text-brand { color: var(--brand-green); }
+.bg-brand { background-color: var(--brand-green); }
+.border-brand { border-color: var(--brand-green); }
+
+/* 通用按鈕樣式 */
+.btn-primary {
+    background-color: var(--brand-green);
+    color: white;
+    transition: all 0.2s;
+}
+.btn-primary:hover {
+    background-color: var(--brand-green-dark);
+    transform: translateY(-1px);
+}

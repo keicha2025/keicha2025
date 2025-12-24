@@ -1,17 +1,8 @@
 // assets/js/config.js
-const SITE_CONFIG = {
-    brandName: "KEICHA",
+const KEICHA_CONFIG = {
     lineId: "@366qwylw",
     lineLink: "https://lin.ee/QJU5mUO",
-    email: "keicha.nihoncha@gmail.com",
-    pcPayLink: "https://pcpay.tw/NF4vv", // 補款連結
-    footerCopyright: `© ${new Date().getFullYear()} KEICHA. All Rights Reserved.`,
-    
-    // 導覽選單配置
-    navMenu: [
-        { name: "抹茶代購狀況", url: "./maccha.html" },
-        { name: "電話代播服務", url: "./denwa.html" },
-        { name: "訂單追蹤", url: "./jyoukyou.html" },
-        { name: "貨到付款下單", url: "./diy.html" }
-    ]
+    pcPayLink: "https://pcpay.tw/NF4vv",
+    myshipLink: "https://myship.7-11.com.tw/cart/easy/GM2510186847800",
+    email: "keicha.nihoncha@gmail.com"
 };

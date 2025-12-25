@@ -213,13 +213,12 @@ title: 賣場管理後台
     </main>
 </div>
 
+<script src="js/api.js"></script>
 <script>
-    const GAS_URL = "https://script.google.com/macros/s/AKfycbyUq36i64Z-JGcERE_rZOdphVtVDX8L-lguc7eiUIdoAERqI1ZK8GWAL-HgbC75cuMHFg/exec";
 
     document.addEventListener('DOMContentLoaded', async () => {
         try {
-            const res = await fetch(GAS_URL);
-            const data = await res.json();
+            const data = await API.fetchSystemData();
             
             if (data && data.fast_config) {
                 fillForm(data.fast_config);
@@ -282,12 +281,7 @@ title: 賣場管理後台
         };
 
         try {
-            const res = await fetch(GAS_URL, {
-                method: 'POST',
-                body: JSON.stringify(payload)
-            });
-            
-            const result = await res.json();
+            const result = await API.updateFastConfig(payload);
             
             if (result.success) {
                 alert("設定已更新成功！");

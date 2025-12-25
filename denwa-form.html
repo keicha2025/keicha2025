@@ -238,8 +238,8 @@ description: 線上填寫代播需求，我們將為您聯繫日本店家。
     </div>
 </div>
 
+<script src="js/api.js"></script>
 <script>
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyaiaR2hPXA8RN2E1_5GUYFNtzGnkUZC5Kq2xXt6Mw80QVRw0Wi7fBrM2k3MxyZhon4/exec";
     
     let currentPlans = [];
     let currentPrice = 0;
@@ -276,8 +276,7 @@ description: 線上填寫代播需求，我們將為您聯繫日本店家。
     function fetchPlans() {
         const container = document.getElementById('plan-container');
         
-        fetch(`${SCRIPT_URL}?action=getPlans`)
-        .then(res => res.json())
+        API.fetchDenwaPlans()
         .then(plans => {
             currentPlans = plans;
             renderPlans(plans);
@@ -388,11 +387,7 @@ description: 線上填寫代播需求，我們將為您聯繫日本店家。
         const selectedPlan = document.querySelector('input[name="paymentPlan"]:checked');
         const paymentLink = selectedPlan ? selectedPlan.getAttribute('data-link') : '';
 
-        fetch(SCRIPT_URL, {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.json())
+        API.submitDenwaBooking(formData)
         .then(data => {
             if (data.result === 'success') {
                 const displayData = {

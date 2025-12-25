@@ -44,6 +44,8 @@ styles: |
 
         button:disabled {
             cursor: not-allowed;
+    <script src="js/api.js"></script>
+    <script src="js/api.js"></script>
             opacity: 0.8;
         }
     </style>
@@ -59,7 +61,6 @@ scripts: |
             
             let originalButtonContent = "";
 
-            const API_URL = "https://script.google.com/macros/s/AKfycbyUq36i64Z-JGcERE_rZOdphVtVDX8L-lguc7eiUIdoAERqI1ZK8GWAL-HgbC75cuMHFg/exec"; 
 
             if (searchButton) searchButton.addEventListener('click', handleSearch);
             
@@ -86,12 +87,7 @@ scripts: |
                 resultsContainer.innerHTML = '';
 
                 try {
-                    let fetchUrl = `${API_URL}?action=query`;
-                    if (orderId) fetchUrl += `&orderId=${encodeURIComponent(orderId)}`;
-                    if (phone) fetchUrl += `&phone=${encodeURIComponent(phone)}`;
-
-                    const response = await fetch(fetchUrl);
-                    const json = await response.json();
+                    const json = await API.queryOrder({ orderId, phone });
                     
                     if (json.success && json.data && json.data.length > 0) {
                         renderResults(json.data);

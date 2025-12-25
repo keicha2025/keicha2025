@@ -266,9 +266,8 @@ keywords: 抹茶代購, 抹茶, 丸久小山園, 山政小山園, 星野製茶�
 
 </div>
 
+<script src="js/api.js"></script>
 <script>
-    const ORDER_API_URL = "https://script.google.com/macros/s/AKfycbyUq36i64Z-JGcERE_rZOdphVtVDX8L-lguc7eiUIdoAERqI1ZK8GWAL-HgbC75cuMHFg/exec";
-    const DISPLAY_API_URL = "https://script.google.com/macros/s/AKfycbxnxbcdCdxH2Qmuek5Up8BqTWeOLUcLR30jfUi0lMbMn5ocn9tY1f_c7yEyd9KSZ4Um/exec";
     const BASE_REPO_URL = "assets/images/"; 
 
     let allProducts = [];
@@ -567,10 +566,7 @@ keywords: 抹茶代購, 抹茶, 丸久小山園, 山政小山園, 星野製茶�
         msg.className = "text-xs mt-2 pl-1 h-4 font-medium text-gray-400";
         btn.disabled = true;
 
-        fetch(ORDER_API_URL, {
-            method: 'POST',
-            body: JSON.stringify({ action: "login", phone: phone })
-        })
+        API.login(phone)
         .then(res => res.json())
         .then(data => {
             const info = (data.success && data.data) ? data.data : null;
@@ -723,11 +719,7 @@ keywords: 抹茶代購, 抹茶, 丸久小山園, 山政小山園, 星野製茶�
             join_member: isMemberCheck
         };
 
-        fetch(ORDER_API_URL, {
-            method: 'POST',
-            body: JSON.stringify(payload)
-        })
-        .then(res => res.json())
+        API.checkout(payload)
         .then(data => {
             if(data.success) {
                 alert(`訂單建立成功！\n編號：${data.orderId}`);
@@ -764,8 +756,8 @@ keywords: 抹茶代購, 抹茶, 丸久小山園, 山政小山園, 星野製茶�
          
          // 並行請求：ORDER_API_URL 抓取運費規則 (必須)，DISPLAY_API_URL 抓取商品 (維持原狀)
          Promise.all([
-             fetch(ORDER_API_URL).then(res => res.json()), // 請求運費規則
-             fetch(DISPLAY_API_URL).then(res => res.json()) // 請求商品資料
+             API.fetchSystemData(),
+             API.fetchMatchaData()
          ])
             .then(([rulesData, displayData]) => {
                 // 1. 處理運費規則 (完整保存，來自 ORDER_API_URL)

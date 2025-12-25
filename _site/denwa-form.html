@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>電話代播預約申請 | KEICHA 服務</title>
+    <meta name="description" content="線上填寫代播需求，我們將為您聯繫日本店家。">
+    
+    
+
+    <meta name="google-site-verification" content="RSCsK8X-OoCTr2uKZ2oKz-QbY1SjZWYLZRIfQz9NKWY" />
+    
+    <meta property="og:title" content="電話代播預約申請 | KEICHA 服務">
+    <meta property="og:description" content="線上填寫代播需求，我們將為您聯繫日本店家。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="http://0.0.0.0:4000/images/KEICHA_LOGO_chuuouzoroe.jpg">
+    <meta property="og:url" content="http://0.0.0.0:4000/denwa-form.html">
+    <meta property="og:site_name" content="KEICHA">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="電話代播預約申請 | KEICHA 服務">
+    <meta name="twitter:description" content="線上填寫代播需求，我們將為您聯繫日本店家。">
+    <meta name="twitter:image" content="http://0.0.0.0:4000/images/KEICHA_LOGO_chuuouzoroe.jpg">
+    
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <style>
+        /* 定義字體變數 */
+        :root {
+            --font-brand: 'Zen Maru Gothic', sans-serif;
+            /* 改回 Noto Sans TC */
+            --font-body: 'Noto Sans TC', sans-serif; 
+        }
+
+        /* (放入所有頁面共用的 CSS) */
+        html { scroll-behavior: smooth; }
+
+        body { 
+            /* 全站預設使用思源黑體 */
+            font-family: var(--font-body), sans-serif; 
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #f8fafc;
+        }
+
+        /* 強制繼承 (覆蓋 Tailwind 預設) */
+        h1, h2, h3, h4, h5, h6, p, a, span, button, input, div, li {
+            font-family: var(--font-body), sans-serif;
+        }
+
+        /* 品牌標準字專用類別 */
+        .brand-title-font {
+            font-family: var(--font-brand) !important;
+            font-weight: 500 !important;
+        }
+
+        .dropdown-menu[data-state="open"] { display: block; }
+        .dropdown-menu[data-state="closed"] { display: none; }
+        .mobile-menu[data-state="open"] { display: block; }
+        .mobile-menu[data-state="closed"] { display: none; }
+
+        /* 圖示樣式設定 */
+        .material-symbols-rounded {
+          font-family: 'Material Symbols Rounded' !important;
+          font-weight: normal;
+          font-style: normal;
+          font-size: 24px;
+          display: inline-block;
+          line-height: 1;
+          text-transform: none;
+          letter-spacing: normal;
+          word-wrap: normal;
+          white-space: nowrap;
+          direction: ltr;
+          vertical-align: middle;
+          -webkit-font-smoothing: antialiased;
+          text-rendering: optimizeLegibility;
+          -moz-osx-font-smoothing: grayscale;
+          font-feature-settings: 'liga';
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+    
+    <script>
+        // 自訂 Tailwind 顏色 (共用)
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGreen: '#6ea44c',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    
+
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-50 h-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl h-full flex justify-between items-center">
+        
+        <a href="/index.html" class="flex items-center">
+            <img src="/images/KEICHA_LOGO.svg" alt="KEICHA Logo" class="h-14 rounded-lg">
+        </a>
+
+        <nav class="hidden md:flex items-center space-x-2 lg:space-x-4">
+            
+            <div class="relative">
+                <button id="desktop-dropdown-button" class="px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brandGreen hover:bg-gray-50 flex items-center">
+                    <span>服務總覽</span>
+                    <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
+                <div id="desktop-dropdown-menu" data-state="closed" class="dropdown-menu absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                    <a href="/maccha.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                        抹茶代購狀況
+                    </a>
+                    <a href="/denwa.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                        電話代播服務
+                    </a>
+                    <a href="/jyoukyou.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                        訂單追蹤
+                    </a>
+                </div>
+            </div>
+
+<a href="/diy" 
+   class="px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brandGreen hover:bg-gray-50">
+   貨到付款下單
+</a>
+
+            <a href="https://pcpay.tw/NF4vv" target="_blank" rel="noopener noreferrer" class="px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brandGreen hover:bg-gray-50">
+                款項支付
+            </a>
+
+            <button type="button" id="desktop-share-button" class="p-2 text-brandGreen hover:text-opacity-80 rounded-full focus:outline-none focus:ring-2 focus:ring-brandGreen hidden" title="分享網站">
+                <span class="sr-only">分享網站</span>
+                <span class="material-symbols-rounded text-2xl">ios_share</span>
+            </button>
+
+            <a href="https://lin.ee/QJU5mUO" target="_blank" rel="noopener noreferrer" class="ml-2 inline-block bg-brandGreen text-white px-5 py-2 rounded-full text-base font-medium hover:bg-opacity-90 transition duration-300 shadow">
+                LINE官方客服
+            </a>
+        </nav>
+
+        <div class="md:hidden flex items-center space-x-2">
+            
+            <button type="button" id="mobile-share-button-fixed" class="p-2 text-brandGreen rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-brandGreen hidden" title="分享網站">
+                <span class="sr-only">分享網站</span>
+                <span class="material-symbols-rounded text-2xl">ios_share</span>
+            </button>
+
+            <button id="mobile-menu-button" class="p-2 text-brandGreen rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-brandGreen">
+                <span class="sr-only">開啟選單</span>
+                <span class="material-symbols-rounded text-3xl">menu</span>
+            </button>
+        </div>
+    </div>
+    
+<div id="mobile-menu" class="mobile-menu md:hidden absolute top-20 left-0 w-full bg-white shadow-lg z-40" data-state="closed">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+
+        <!-- 第一層 -->
+        <a href="/index.html"
+           class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brandGreen hover:bg-gray-50">
+            服務總覽
+        </a>
+
+        <!-- 第二層（縮排） -->
+        <a href="/maccha.html"
+           class="block pl-8 pr-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brandGreen hover:bg-gray-50">
+            抹茶代購狀況
+        </a>
+
+        <a href="/denwa.html"
+           class="block pl-8 pr-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brandGreen hover:bg-gray-50">
+            電話代播服務
+        </a>
+
+        <!-- 第一層 -->
+        <a href="/jyoukyou.html"
+           class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brandGreen hover:bg-gray-50">
+            訂單追蹤
+        </a>
+
+<a href="/diy.html"
+   class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brandGreen hover:bg-gray-50">
+   貨到付款下單
+</a>
+
+        <a href="https://pcpay.tw/NF4vv"
+           target="_blank" rel="noopener noreferrer"
+           class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brandGreen hover:bg-gray-50">
+            款項支付
+        </a>
+
+        <hr class="my-2">
+
+        <a href="https://lin.ee/QJU5mUO"
+           target="_blank" rel="noopener noreferrer"
+           class="block w-full text-center bg-brandGreen text-white px-4 py-2 rounded-md text-base font-medium hover:bg-opacity-90">
+            LINE 官方客服
+        </a>
+
+    </div>
+</div>
+
+</header>
+
+
+
+
+
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+<style>
+    /* 基礎表單樣式 */
+    .form-input {
+        width: 100%; padding: 0.75rem;
+        border: 1px solid #e2e8f0; border-radius: 0.5rem;
+        background-color: #f8fafc; transition: all 0.2s;
+        font-size: 16px; 
+    }
+    .form-input:focus {
+        background-color: #fff; border-color: #6ea44c; outline: none;
+        box-shadow: 0 0 0 3px rgba(110, 164, 76, 0.1);
+    }
+    .form-label {
+        display: block; font-weight: 600; color: #475569; margin-bottom: 0.5rem;
+    }
+    .section-title {
+        font-size: 1.125rem; font-weight: 700; color: #1e293b;
+        border-left: 4px solid #6ea44c; padding-left: 1rem;
+        margin-bottom: 1.5rem; margin-top: 2rem;
+    }
+    
+    /* 人數計數器 */
+    .counter-wrapper {
+        display: flex; align-items: center; justify-content: space-between;
+        background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.5rem;
+        padding: 0.25rem;
+        width: 140px; 
+    }
+    .counter-btn {
+        width: 36px; height: 36px;
+        background: white; border: 1px solid #cbd5e1; border-radius: 6px;
+        color: #6ea44c; font-weight: bold; font-size: 1.25rem;
+        display: flex; align-items: center; justify-content: center;
+        cursor: pointer; user-select: none;
+        flex-shrink: 0; 
+        transition: background 0.1s;
+    }
+    .counter-btn:active { background: #f1f5f9; }
+    .counter-value {
+        width: 48px; text-align: center; background: transparent; border: none;
+        font-weight: bold; color: #334155; font-size: 1.1rem;
+        padding: 0; margin: 0;
+    }
+    
+    /* === 自定義 Radio Button 樣式 === */
+    .custom-radio {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 1.25rem; height: 1.25rem;
+        border-radius: 50%;
+        background-color: white;
+        border: 2px solid #cbd5e1; /* 未選取時：灰色邊框 */
+        cursor: pointer;
+        flex-shrink: 0;
+        transition: all 0.2s ease;
+    }
+    .custom-radio:checked {
+        border-color: white; /* 選取時：白色外框 */
+        /* 選取時：中間品牌色圓點 (利用漸層模擬) */
+        background-image: radial-gradient(circle, #6ea44c 45%, transparent 50%);
+    }
+
+    /* 骨架屏 */
+    .skeleton {
+        height: 80px; background: #e2e8f0; border-radius: 0.75rem;
+        margin-bottom: 1rem; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
+
+    /* Loading Overlay */
+    #loading-overlay {
+        display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(255,255,255,0.8); z-index: 9999;
+        align-items: center; justify-content: center; flex-direction: column;
+    }
+    .spinner {
+        border: 4px solid #f3f3f3; border-top: 4px solid #6ea44c;
+        border-radius: 50%; width: 40px; height: 40px;
+        animation: spin 1s linear infinite; margin-bottom: 10px;
+    }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    
+    .content-safe-area { padding-bottom: 120px; }
+
+    .material-symbols-outlined {
+        vertical-align: middle;
+        /* 確保 icon 大小一致 */
+        font-size: 18px !important; 
+    }
+</style>
+
+<div class="container mx-auto max-w-2xl px-4 py-8 content-safe-area">
+    
+    <div class="text-center mb-8">
+        <h1 class="text-3xl font-bold text-slate-800 mb-2">電話代播預約</h1>
+        <p class="text-slate-500">免登入・快速填寫・Email確認</p>
+    </div>
+
+    <div id="loading-overlay">
+        <div class="spinner"></div>
+        <div class="text-slate-600 font-bold">正在處理您的預約...</div>
+    </div>
+
+    <form id="booking-form" class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8">
+        
+        <h3 class="section-title mt-0">聯絡人資訊</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+                <label class="form-label" for="customerName">您的中文姓名 <span class="text-red-500">*</span></label>
+                <input type="text" id="customerName" name="customerName" class="form-input" required>
+            </div>
+            <div>
+                <label class="form-label" for="lineName">LINE 顯示名稱</label>
+                <input type="text" id="lineName" name="lineName" class="form-input" placeholder="方便客服核對用">
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <label class="form-label" for="email">電子郵件 (接收確認信) <span class="text-red-500">*</span></label>
+            <input type="email" id="email" name="email" class="form-input" placeholder="example@email.com" required>
+        </div>
+
+        <div class="mb-6">
+            <label class="form-label" for="phone">聯絡電話 <span class="text-red-500">*</span></label>
+            <input type="tel" id="phone" name="phone" class="form-input" required>
+        </div>
+
+        <h3 class="section-title">代播需求內容</h3>
+
+        <div class="mb-6">
+            <label class="form-label" for="shopName">預約餐廳/店家名稱 <span class="text-red-500">*</span></label>
+            <input type="text" id="shopName" name="shopName" class="form-input" placeholder="例如：叙叙苑 晴空塔店" required>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+                <label class="form-label" for="serviceDate">預約日期 <span class="text-red-500">*</span></label>
+                <input type="date" id="serviceDate" name="serviceDate" class="form-input" required>
+            </div>
+            <div>
+                <label class="form-label" for="serviceTime">預約時間 <span class="text-red-500">*</span></label>
+                <select id="serviceTime" name="serviceTime" class="form-input appearance-none bg-white cursor-pointer" required>
+                    </select>
+            </div>
+        </div>
+
+        <div class="space-y-4 mb-6">
+            <div class="flex items-center justify-between">
+                <label class="font-bold text-slate-700">大人人數</label>
+                <div class="counter-wrapper">
+                    <div class="counter-btn" onclick="updateCount('adultCount', -1)">−</div>
+                    <input type="number" id="adultCount" name="adultCount" class="counter-value" value="2" readonly>
+                    <div class="counter-btn" onclick="updateCount('adultCount', 1)">+</div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between">
+                <label class="font-bold text-slate-700">小孩人數</label>
+                <div class="counter-wrapper">
+                    <div class="counter-btn" onclick="updateCount('childCount', -1)">−</div>
+                    <input type="number" id="childCount" name="childCount" class="counter-value" value="0" readonly>
+                    <div class="counter-btn" onclick="updateCount('childCount', 1)">+</div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-2 border-t border-dashed border-slate-200">
+                <label class="font-bold text-slate-900">總人數</label>
+                <div class="w-[140px] text-center font-bold text-lg text-[#6ea44c]">
+                    <span id="totalCountDisplay">2</span> 人
+                    <input type="hidden" id="totalCount" name="totalCount" value="2">
+                </div>
+            </div>
+        </div>
+
+        <div id="child-details-section" class="mb-6 p-4 rounded-xl border border-[#6ea44c]/30 bg-[#6ea44c]/10 hidden">
+            <label class="form-label text-[#5d8c40]" for="childDetails">
+                小孩詳細資訊 (年齡 / 是否用餐) <span class="text-red-500">*</span>
+            </label>
+            <textarea id="childDetails" class="form-input border-[#6ea44c]/30 focus:border-[#6ea44c] focus:ring-[#6ea44c]/20" rows="2" placeholder="例如：一位3歲(需兒童椅)、一位5歲(不用餐)"></textarea>
+            <p class="text-xs text-slate-500 mt-2 flex items-center">
+                <span class="material-symbols-outlined mr-1">info</span>
+                請務必告知店家小孩年齡與是否佔位/用餐。
+            </p>
+        </div>
+
+        <div class="mb-6">
+            <label class="form-label" for="bookingName">訂位登記姓名 (英文) <span class="text-red-500">*</span></label>
+            <input type="text" id="bookingName" name="bookingName" class="form-input" placeholder="與護照相同之英文拼音" required>
+        </div>
+
+        <div class="mb-6">
+            <label class="form-label" for="note">特殊備註 (選填)</label>
+            <textarea id="note" name="note" class="form-input" rows="3" placeholder="如有備用時段，或套餐選擇等其他需求請於此填寫"></textarea>
+        </div>
+
+        <div class="mb-6">
+            <label class="form-label" for="japanContact">在日聯絡資訊 (選填)</label>
+            <input type="text" id="japanContact" name="japanContact" class="form-input" placeholder="">
+            <div class="flex items-center mt-2 text-xs text-slate-500">
+                <span class="material-symbols-outlined mr-1 flex-shrink-0 text-slate-400">info</span>
+                <span>部分店家需要日本聯絡電話才能接受預約，如有在日聯絡方式，或預定入住的飯店名稱與電話請填寫於此。</span>
+            </div>
+        </div>
+
+        <h3 class="section-title">選擇方案</h3>
+        
+        <div id="plan-container" class="grid grid-cols-1 gap-4 mb-8">
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+        </div>
+
+        <input type="hidden" name="serviceItem" value="代播預約">
+
+    </form>
+</div>
+
+<div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 h-20 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] z-50">
+    <div class="container mx-auto max-w-2xl h-full px-6 flex items-center justify-between">
+        <div class="flex flex-col justify-center">
+            <span class="text-xs text-slate-500 leading-tight">預估費用</span>
+            <div class="text-2xl font-bold text-[#6ea44c] leading-tight">
+                TWD <span id="price-display">--</span>
+            </div>
+        </div>
+        
+        <button type="button" onclick="submitForm()" class="bg-[#6ea44c] hover:bg-[#5d8c40] text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
+            確認送出
+        </button>
+    </div>
+</div>
+
+<script src="js/api.js"></script>
+<script>
+    
+    let currentPlans = [];
+    let currentPrice = 0;
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const dateInput = document.getElementById('serviceDate');
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        dateInput.valueAsDate = tomorrow;
+
+        initTimeSelect();
+        fetchPlans();
+    });
+
+    function initTimeSelect() {
+        const select = document.getElementById('serviceTime');
+        const interval = 30; 
+        
+        for (let hour = 0; hour < 24; hour++) {
+            for (let min = 0; min < 60; min += interval) {
+                const hStr = hour.toString().padStart(2, '0');
+                const mStr = min.toString().padStart(2, '0');
+                const timeStr = `${hStr}:${mStr}`;
+                
+                const option = document.createElement('option');
+                option.value = timeStr;
+                option.textContent = timeStr;
+                select.appendChild(option);
+            }
+        }
+        select.value = "12:00";
+    }
+
+    function fetchPlans() {
+        const container = document.getElementById('plan-container');
+        
+        API.fetchDenwaPlans()
+        .then(plans => {
+            currentPlans = plans;
+            renderPlans(plans);
+        })
+        .catch(err => {
+            console.error(err);
+            container.innerHTML = '<p class="text-red-500">載入方案失敗，請重新整理頁面。</p>';
+        });
+    }
+
+    function renderPlans(plans) {
+        const container = document.getElementById('plan-container');
+        container.innerHTML = ''; 
+
+        plans.forEach((plan, index) => {
+            const isChecked = index === 0 ? 'checked' : '';
+            
+            // HTML 結構修改重點：
+            // 1. input type="radio" 使用 class="custom-radio" 來套用新 CSS
+            // 2. 說明文字外層增加 <div class="pr-4"> 容器 (透明容器)
+            // 3. 說明文字 span 增加 text-justify 與左右對齊樣式
+            // 4. 金額區域增加 shrink-0 確保不被推擠
+            
+            const html = `
+            <label class="relative flex items-center p-4 border rounded-xl cursor-pointer hover:bg-slate-50 transition-colors border-slate-200 has-[:checked]:border-[#6ea44c] has-[:checked]:bg-[#6ea44c]/10">
+                
+                <input type="radio" name="paymentPlan" value="${plan.name}" 
+                       data-link="${plan.link}" 
+                       class="custom-radio" 
+                       ${isChecked} 
+                       onchange="updatePrice(${plan.price})">
+                
+                <div class="ml-4 flex-1 pr-4"> <span class="block text-slate-800 font-bold mb-1">${plan.name}</span>
+                    <div class="w-full">
+                        <span class="block text-sm text-slate-500 text-justify leading-relaxed">${plan.desc}</span>
+                    </div>
+                </div>
+                
+                <div class="text-lg font-bold text-[#6ea44c] shrink-0 text-right whitespace-nowrap pl-2">
+                    $${plan.price}
+                </div>
+            </label>
+            `;
+            container.insertAdjacentHTML('beforeend', html);
+            
+            if (index === 0) updatePrice(plan.price);
+        });
+    }
+
+    function updatePrice(price) {
+        currentPrice = price;
+        document.getElementById('price-display').innerText = price;
+    }
+
+    function updateCount(id, delta) {
+        const input = document.getElementById(id);
+        let val = parseInt(input.value) || 0;
+        val += delta;
+        if (val < 0) val = 0;
+        if (id === 'adultCount' && val < 1) val = 1; 
+        input.value = val;
+        calculateTotal();
+    }
+
+    function calculateTotal() {
+        const adult = parseInt(document.getElementById('adultCount').value) || 0;
+        const child = parseInt(document.getElementById('childCount').value) || 0;
+        const total = adult + child;
+        
+        document.getElementById('totalCount').value = total;
+        document.getElementById('totalCountDisplay').innerText = total;
+
+        const childSection = document.getElementById('child-details-section');
+        const childDetailsInput = document.getElementById('childDetails');
+        
+        if (child > 0) {
+            childSection.classList.remove('hidden');
+            childDetailsInput.required = true;
+        } else {
+            childSection.classList.add('hidden');
+            childDetailsInput.required = false;
+            childDetailsInput.value = '';
+        }
+    }
+
+    function submitForm() {
+        const form = document.getElementById('booking-form');
+        
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        document.getElementById('loading-overlay').style.display = 'flex';
+
+        const formData = new FormData(form);
+        const noteInput = document.getElementById('note');
+        const originalNote = noteInput.value;
+        const childDetails = document.getElementById('childDetails').value;
+        const childCount = parseInt(document.getElementById('childCount').value) || 0;
+
+        let finalNote = originalNote;
+        if (childCount > 0 && childDetails) {
+            finalNote = `[小孩需求]: ${childDetails}\n[其他備註]: ${originalNote}`;
+        }
+        formData.set('note', finalNote);
+
+        const selectedPlan = document.querySelector('input[name="paymentPlan"]:checked');
+        const paymentLink = selectedPlan ? selectedPlan.getAttribute('data-link') : '';
+
+        API.submitDenwaBooking(formData)
+        .then(data => {
+            if (data.result === 'success') {
+                const displayData = {
+                    orderId: data.order_id,
+                    customerName: formData.get('customerName'),
+                    lineName: formData.get('lineName'),
+                    email: formData.get('email'),
+                    phone: formData.get('phone'),
+                    shopName: formData.get('shopName'),
+                    dateTime: `${formData.get('serviceDate')} ${formData.get('serviceTime')}`,
+                    people: `大人 ${formData.get('adultCount')} / 小孩 ${formData.get('childCount')} (共 ${formData.get('totalCount')} 人)`,
+                    bookingName: formData.get('bookingName'),
+                    planName: formData.get('paymentPlan'),
+                    note: finalNote,
+                    paymentLink: paymentLink
+                };
+                
+                sessionStorage.setItem('orderResult', JSON.stringify(displayData));
+                window.location.href = `form-result.html`;
+            } else {
+                alert('預約失敗：' + data.message);
+                document.getElementById('loading-overlay').style.display = 'none';
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('發生錯誤，請檢查網路連線。');
+            document.getElementById('loading-overlay').style.display = 'none';
+        });
+    }
+</script>
+
+
+    <!-- 頁尾 (模組化) -->
+<!-- 
+  注意: 
+  1. 圖片路徑已改為 /images/...
+  2. 連結路徑已改為 /denwa-form.html 
+-->
+<footer id="notice" class="bg-gray-800 text-gray-300 py-16 scroll-mt-20">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            
+            <!-- 服務連結 -->
+            <div>
+                <h4 class="text-lg font-semibold text-white mb-4">服務項目</h4>
+                <ul class="space-y-3">
+                    <li><a href="/maccha.html" class="text-gray-400 hover:text-white hover:underline transition-colors">抹茶代購狀況</a></li>
+                    <li><a href="/denwa.html" class="text-gray-400 hover:text-white hover:underline transition-colors">電話代播服務</a></li>
+                    <li><a href="/jyoukyou.html" class="text-gray-400 hover:text-white hover:underline transition-colors">訂單查詢</a></li>
+                </ul>
+            </div>
+
+            <!-- 付款方式 -->
+            <div>
+                <h4 class="text-lg font-semibold text-white mb-4">付款與下單</h4>
+                <ul class="space-y-3">
+                      <li>
+<a href="/user-guide.html" 
+   class="text-gray-400 hover:text-white hover:underline transition-colors">
+   訂購方式說明
+</a>
+    </li>
+                    <li><a href="https://pcpay.tw/NF4vv" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white hover:underline transition-colors">線上刷卡支付</a></li>
+<li>
+  <a href="/diy" 
+     class="text-gray-400 hover:text-white hover:underline transition-colors">
+     貨到付款下單
+  </a>
+</li>                </ul>
+            </div>
+
+            <!-- 購買須知 (★ 偵測到您修改過的格式) -->
+            <div>
+                <h4 class="text-lg font-semibold text-white mb-4">購買須知</h4>
+                <ul class="space-y-3 text-sm">
+                    <li class="text-gray-400">
+                        <span class="font-medium text-gray-200">出貨時間：</span>
+                        預購商品下單後約15~20天內出貨。
+                    </li>
+                    <li class="text-gray-400">
+                        <span class="font-medium text-gray-200">客製訂購：</span>
+                        歡迎聯繫訂購其他抹茶品項。
+                    </li>
+                    <li class="text-gray-400">
+                        <span class="font-medium text-gray-200">退換政策：</span>
+                        預購商品不適用猶豫期，恕不接受取消或退貨。
+                    </li>
+                    <li class="text-gray-400">
+                        <span class="font-medium text-gray-200">付款方式：</span>
+                        代購採 7-11 貨到付款；代撥服務採線上刷卡。
+                    </li>
+                    <li class="text-gray-400">
+                        <a href="/privacy.html" class="font-medium text-gray-200 hover:text-white hover:underline">
+                            隱私權條款
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 聯絡資訊 -->
+            <div>
+                <h4 class="text-lg font-semibold text-white mb-4">聯絡資訊</h4>
+                <ul class="space-y-3 text-gray-400">
+                    <li>
+                        <span class="font-medium text-gray-200">Email:</span><br>
+                        <a href="mailto:keicha.nihoncha@gmail.com" class="hover:text-white hover:underline">keicha.nihoncha@gmail.com</a>
+                    </li>
+                    <li>
+                        <span class="font-medium text-gray-200">LINE ID:</span><br>
+                        @366qwylw
+                    </li>
+                    <li class="mt-4">
+                        <img src="https://qr-official.line.me/gs/M_366qwylw_BW.png?oat_content=qr" alt="加入 LINE 官方帳號" class="w-24 h-24 rounded-lg">
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        
+        <!-- ★ 偵測到您修改過的 2025 年版權 -->
+        <div class="text-center text-gray-500 mt-12 pt-8 border-t border-gray-700 text-sm">
+            <span>&copy; 2025 KEICHA. All Rights Reserved.</span>
+        </div>
+    </div>
+
+</footer>
+
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- 1. 導覽列邏輯 (手機選單) ---
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (menuButton && mobileMenu) {
+                menuButton.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    const currentState = mobileMenu.getAttribute('data-state');
+                    if (currentState === 'closed') {
+                        mobileMenu.setAttribute('data-state', 'open');
+                    } else {
+                        mobileMenu.setAttribute('data-state', 'closed');
+                    }
+                });
+            }
+
+            // --- 2. 導覽列邏輯 (電腦版 "HOME" 下拉選單) ---
+            const dropdownButton = document.getElementById('desktop-dropdown-button');
+            const dropdownMenu = document.getElementById('desktop-dropdown-menu');
+
+            if (dropdownButton && dropdownMenu) {
+                dropdownButton.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    const currentState = dropdownMenu.getAttribute('data-state');
+                    if (currentState === 'closed') {
+                        dropdownMenu.setAttribute('data-state', 'open');
+                    } else {
+                        dropdownMenu.setAttribute('data-state', 'closed');
+                    }
+                });
+                dropdownMenu.addEventListener('click', () => {
+                     dropdownMenu.setAttribute('data-state', 'closed');
+                });
+            }
+
+            // --- 3. 全域點擊監聽 (用來關閉選單) ---
+            window.addEventListener('click', () => {
+                if (dropdownMenu) {
+                    dropdownMenu.setAttribute('data-state', 'closed');
+                }
+                if (mobileMenu && mobileMenu.getAttribute('data-state') === 'open') {
+                    mobileMenu.setAttribute('data-state', 'closed');
+                }
+            });
+            
+            if (mobileMenu) {
+                 mobileMenu.addEventListener('click', (event) => event.stopPropagation());
+            }
+
+            // --- 4. Web Share API 邏輯 ---
+            const desktopShareButton = document.getElementById('desktop-share-button');
+            const mobileShareButtonFixed = document.getElementById('mobile-share-button-fixed');
+            
+            const shareTitle = document.querySelector('meta[property="og:title"]')?.getAttribute('content') || document.title;
+            const shareText = document.querySelector('meta[property="og:description"]')?.getAttribute('content') || '查看 KEICHA 的服務';
+            const shareUrl = document.querySelector('meta[property="og:url"]')?.getAttribute('content') || window.location.href;
+
+            const shareData = {
+                title: shareTitle,
+                text: shareText,
+                url: shareUrl
+            };
+
+            if (navigator.share) {
+                const showShareButton = (button) => {
+                    if (button) {
+                        button.classList.remove('hidden');
+                        button.addEventListener('click', async (event) => {
+                            event.stopPropagation();
+                            try {
+                                await navigator.share(shareData);
+                                console.log('網站分享成功');
+                            } catch (err) {
+                                console.error('分享失敗: ', err);
+                            }
+                        });
+                    }
+                };
+                showShareButton(desktopShareButton);
+                showShareButton(mobileShareButtonFixed);
+            } else {
+                console.log('此瀏覽器不支援 Web Share API');
+            }
+        
+        });
+    </script>
+
+    
+
+</body>
+</html>
